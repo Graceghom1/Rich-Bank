@@ -9,19 +9,20 @@ import { SharedService } from 'app/shared.service';
 })
 
 export class AccueilComponent implements OnInit {
-  selectedLabel: string = "";
+  accounts =  this.sharedService.accounts;
 
-  constructor(private router: Router, private sharedService: SharedService) { }
+  constructor(private router: Router, private sharedService : SharedService ) { }
 
   ngOnInit(): void {
-    this.sharedService.selectedLabel$.subscribe(label => {
-      this.selectedLabel = label;
-    });
+
   }
 
   ouvrirNouveauCompte() {
     // Utilisez le service Router pour naviguer vers la page NewAccount
     this.router.navigate(['/new-account']);
+  }
+  envoieargent(){
+    this.router.navigate(['/sendmoney-page']);
   }
 
 }

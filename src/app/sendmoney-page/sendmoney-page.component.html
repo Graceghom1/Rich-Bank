@@ -1,0 +1,55 @@
+<div class="min-h-screen  items-center justify-center bg-gray-100">
+  <nav class="bg-white">
+    <div class="container flex justify-between space-x-4 p-4 items-center mx-auto">
+      <a routerlink="/" href="/">
+        <div class="w-50">
+          <img src="theultralinx.com" class="max-auto">
+        </div>
+      </a>
+      <div>
+        <div>
+          <a routerlink="profile" href="/profile">
+            <div class="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-600 rounded-full">
+              <span class="font-medium text-white">s</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="bg-white p-8 flex flex-col space-y-4 border border-4 rounded shadow-md max-w-12xl mx-auto ml-50">
+  <div>
+      <a routerLink="/" class="text-2xl" href="/" (click)="retourArriere()"><-</a>
+  </div>
+
+  <div>
+      <form novalidate class="flex flex-col space-y-4" >
+          <label >
+              <span class="text-gray-700">Receiver account id</span>
+              <div class="border p-2 rounded">
+              <input placeholder="bd26eff0-e416-4154-8ddf-2a4c3e3fbabb"  class="form-input mt-1 block w-full rounded" />
+            </div>
+          </label>
+          <label>
+              <span class="text-gray-700">Amount</span>
+              <div class="border p-2 rounded">
+              <input placeholder="200" type="number"  class="form-input mt-1 block w-full rounded" />
+            </div>
+          </label>
+          <label >
+            <span class="text-gray-700">Description</span>
+            <div class="border p-2 rounded">
+            <input placeholder="Refund..."  class="form-input mt-1 block w-full rounded" />
+          </div>
+        </label>
+          <button routerLink="/accueil"  type="submit" class="bg-blue-500 hover:bg-blue-300 disabled:opacity-25 p-2 rounded text-white" disabled>Send</button>
+      </form>
+  </div>
+</div>
+
+
+</div>
+
+
+

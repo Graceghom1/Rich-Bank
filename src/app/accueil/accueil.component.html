@@ -1,9 +1,9 @@
-<div class="min-h-screen  items-center justify-center bg-gray-100">
+<div class="min-h-screen items-center justify-center bg-gray-100">
   <nav class="bg-white">
     <div class="container flex justify-between space-x-4 p-4 items-center mx-auto">
       <a routerlink="/" href="/">
         <div class="w-50">
-          <img src="theultralinx.com" class="max-auto">
+          <img src="theultralinx.com" class="max-auto" />
         </div>
       </a>
       <div>
@@ -22,33 +22,34 @@
     <div align="center">
       <label for="pet-select"></label>
 
-      <select class="border rounded p-1" name="pets" id="pet-select" >
-        <option value="">Checking account</option>
-        <option value="new-account">New </option>
+      <select class="border rounded p-1" name="pets" id="pet-select">
+        <option *ngFor="let account of accounts" value="">
+          {{ account.label }}
+        </option>
       </select>
       <div>
         <h1>2500,00£</h1>
       </div>
-      <div class=" w-60 flex place-content-evenly">
-        <button type="submit" class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+      <div class="w-60 flex place-content-evenly">
+        <button type="submit"
+          class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
           Infos
         </button>
-        <button type="submit" class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+        <button (click)="envoieargent()" type="submit"
+          class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
           Send
         </button>
-        <button (click)="ouvrirNouveauCompte()" type="submit" class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+        <button (click)="ouvrirNouveauCompte()" type="submit"
+          class="bg-blue-500 text-white py-1 px-1 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
           Open
         </button>
       </div>
     </div>
   </div>
-  <div class="bg-white p-8 border border-4 rounded shadow-md max-w-12xl mx-auto ">
-    <div class="text-center" >
-      <a class="text-blue-500 hover:text-blue-300" href="/new-account/d8f0fc05-d245-4091-beb0-cbb527ab3acc/transactions">View all</a>
+  <div class="bg-white p-8 border border-4 rounded shadow-md max-w-12xl mx-auto">
+    <div class="text-center">
+      <a routerLink="/transaction" class="text-blue-500 hover:text-blue-300"
+        href="/new-account/d8f0fc05-d245-4091-beb0-cbb527ab3acc/transactions">View all</a>
     </div>
   </div>
 </div>
-
-
-
-
