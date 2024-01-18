@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent {
-
+  retourArriere() {
+    window.history.back();
+  }
 }

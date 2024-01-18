@@ -20,24 +20,24 @@
 
 <div class="bg-white p-8 flex flex-col space-y-4 border border-4 rounded shadow-md max-w-12xl mx-auto ml-50">
   <div>
-      <a routerLink="/" class="text-2xl" href="/"><-</a>
+      <a routerLink="/" class="text-2xl" href="/" (click)="retourArriere()"><-</a>
   </div>
 
   <div>
-      <form novalidate class="flex flex-col space-y-4">
+      <form (submit)="enregistrerInformations()" novalidate class="flex flex-col space-y-4" >
           <label >
               <span class="text-gray-700">Label</span>
               <div class="border p-2 rounded">
-              <input placeholder="Checking account" formControlName="label" class="form-input mt-1 block w-full rounded" />
+              <input [(ngModel)]="selectedLabel" placeholder="Checking account"  class="form-input mt-1 block w-full rounded" />
             </div>
           </label>
           <label>
               <span class="text-gray-700">Initial balance</span>
               <div class="border p-2 rounded">
-              <input placeholder="200" type="number" formControlName="initialBalance" class="form-input mt-1 block w-full rounded" />
+              <input placeholder="200" type="number"  class="form-input mt-1 block w-full rounded" />
             </div>
           </label>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-300 disabled:opacity-25 p-2 rounded text-white" disabled>Open</button>
+          <button routerLink="/new-account"  type="submit" class="bg-blue-500 hover:bg-blue-300 disabled:opacity-25 p-2 rounded text-white" disabled>Open</button>
       </form>
   </div>
 </div>
