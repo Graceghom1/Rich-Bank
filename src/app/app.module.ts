@@ -6,20 +6,19 @@ import  {AuthPageComponent} from './auth-page/auth-page.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     AuthPageComponent,
     TransactionComponent,
     NewAccountComponent,
-
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccueilComponent
-
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

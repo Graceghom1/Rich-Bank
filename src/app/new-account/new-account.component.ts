@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from 'app/shared.service';
 
 @Component({
   selector: 'app-new-account',
@@ -7,18 +8,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./new-account.component.css']
 })
 export class NewAccountComponent implements OnInit {
-
-  selectedAccount: string | undefined;
-
-  constructor(private route: ActivatedRoute) { }
+  selectedLabel: string ="";
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.selectedAccount = params['account'];
-      console.log('Received parameter account:', this.selectedAccount);
-      // Vous pouvez utiliser la valeur de "from" pour effectuer des actions spécifiques si nécessaire
-    });
+    console.log('NewAccountComponent initialisé.');
+  }
 
+  enregistrerInformations() {
+    console.log('Enregistrement des informations...');
+    this.sharedService.updateSelectedLabel(this.selectedLabel);
+    console.log('Informations enregistrées.');
+
+  }
+
+  retourArriere() {
+    window.history.back();
   }
 
 }
