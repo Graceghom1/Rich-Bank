@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
 @Component({
@@ -9,8 +9,15 @@ import {Router} from '@angular/router'
   styleUrls: ['./accueil.component.css']
 })
 
-export class AccueilComponent {
-  constructor() {}
+export class AccueilComponent implements OnInit {
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {
+
+  }
+
+  ouvrirNouveauCompte(){
+    this.router.navigate(['new-account']);
+  }
 
 }
