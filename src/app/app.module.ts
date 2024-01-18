@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import  {AuthPageComponent} from './auth-page/auth-page.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthPageComponent,
-    TransactionComponent
+    TransactionComponent,
+    NewAccountComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccueilComponent
+
 
   ],
   providers: [],
