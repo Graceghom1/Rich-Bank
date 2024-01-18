@@ -1,0 +1,8 @@
+.bou²tton{
+  border-spacing: 10%;
+  gap: 5;
+  justify-content: space-between;
+}
+header{
+  align-self: auto;
+}
