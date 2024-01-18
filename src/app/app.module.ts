@@ -7,6 +7,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
