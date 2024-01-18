@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Account } from './classes/account';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  private selectedLabelSource = new BehaviorSubject<string>('');
-  selectedLabel$ = this.selectedLabelSource.asObservable();
+  accounts : Account[] = [];
 
-  updateSelectedLabel(label: string) {
-    console.log('Mise à jour du label partagé :', label);
-    this.selectedLabelSource.next(label);
+  addAccount(account : Account) {
+    this.accounts.push(account);
   }
 
   constructor() { }
