@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SendmoneyPageComponent } from './sendmoney-page/sendmoney-page.component';
 import { DetaitCompteComponent } from './detait-compte/detait-compte.component';
+import { CompteComponent } from './compte/compte.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { DetaitCompteComponent } from './detait-compte/detait-compte.component';
     AccueilComponent,
     SendmoneyPageComponent,
     DetaitCompteComponent,
+    CompteComponent,
   ],
   imports: [
     BrowserModule,

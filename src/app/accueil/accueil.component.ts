@@ -9,6 +9,8 @@ import { SharedService } from 'app/shared.service';
 })
 
 export class AccueilComponent implements OnInit {
+
+  
   accounts =  this.sharedService.accounts;
 
   constructor(private router: Router, private sharedService : SharedService ) { }

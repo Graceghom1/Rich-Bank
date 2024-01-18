@@ -1,1 +1,29 @@
-<p>detait-compte works!</p>
+<div class="min-h-screen items-center justify-center bg-gray-100">
+  <nav class="bg-white">
+    <div class="container flex justify-between space-x-4 p-4 items-center mx-auto">
+      <a routerlink="/" href="/">
+        <div class="w-50">
+          <img src="theultralinx.com" class="max-auto" />
+        </div>
+      </a>
+      <div>
+        <div>
+          <a routerlink="profile" href="/profile">
+            <div class="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-600 rounded-full">
+              <span class="font-medium text-white">{{account.label[0] | uppercase}}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container flex justify-between space-x-4 p-4 items-center mx-auto">
+
+
+    <label class="text-gray-700" for="accountLabel">{{account.label | uppercase}}</label>
+
+      <label  class="text-gray-700">Id</label>
+
+  </div>
+</div>
