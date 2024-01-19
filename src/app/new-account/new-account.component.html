@@ -1,9 +1,9 @@
-<div class="min-h-screen  items-center justify-center bg-gray-100">
+<div class="min-h-screen items-center justify-center bg-gray-100">
   <nav class="bg-white">
     <div class="container flex justify-between space-x-4 p-4 items-center mx-auto">
       <a routerlink="/" href="/">
         <div class="w-50">
-          <img src="theultralinx.com" class="max-auto">
+          <img src="theultralinx.com" class="max-auto" />
         </div>
       </a>
       <div>
@@ -18,10 +18,10 @@
     </div>
   </nav>
 
-<div class="bg-white p-8 flex flex-col space-y-4 border border-4 rounded shadow-md max-w-12xl mx-auto ml-50">
-  <div>
-      <a routerLink="/" class="text-2xl" href="/" (click)="retourArriere()"><-</a>
-  </div>
+  <div class="bg-white p-8 flex flex-col space-y-4 border border-4 rounded shadow-md max-w-12xl mx-auto ml-50">
+    <div>
+      <a routerLink="/" class="text-2xl" href="/" (click)="retourArriere()"> <- </a>
+    </div>
 
   <div>
       <form (submit)="enregistrerInformations()" novalidate class="flex flex-col space-y-4" >
@@ -38,12 +38,8 @@
             </div>
           </label>
           <button routerLink="/new-account"  type="submit" class="bg-blue-500 hover:bg-blue-500  p-2 rounded text-white" >Open</button>
+
       </form>
+    </div>
   </div>
 </div>
-
-
-</div>
-
-
-

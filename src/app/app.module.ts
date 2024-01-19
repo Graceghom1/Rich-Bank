@@ -8,6 +8,10 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SendmoneyPageComponent } from './sendmoney-page/sendmoney-page.component';
+import { DetaitCompteComponent } from './detait-compte/detait-compte.component';
+import { CompteComponent } from './compte/compte.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,12 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
     TransactionComponent,
     NewAccountComponent,
     AccueilComponent,
+    SendmoneyPageComponent,
+    DetaitCompteComponent,
+    CompteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
