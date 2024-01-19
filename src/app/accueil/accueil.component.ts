@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { Account } from 'app/classes/account';
+import { ApiService } from 'app/services/api.service';
 import { SharedService } from 'app/shared.service';
 
 @Component({
@@ -10,26 +12,32 @@ import { SharedService } from 'app/shared.service';
 
 export class AccueilComponent implements OnInit {
 
-  transacs : any[] = []
-  now = Date.now()
-  all = 0
-date: any;
+  //selectedLabel: string = "";
+  accounts: Account[] = [];
 
+  constructor(private router: Router, public apiService: ApiService, private sharedService : SharedService) { }
 
-  accounts =  this.sharedService.accounts;
-
-  constructor(private router: Router, private sharedService : SharedService ) { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('init')
+    console.log(this.accounts)
+    this.accounts = [...JSON.parse(localStorage.getItem('accounts') || '{}')]
+    console.log(this.accounts)
+    ngOnInit(): void {
     this.transacs = this.sharedService.transacs
   for(let t of this.transacs) {
     this.all += t.amount
   }
 
-  }
+  transacs : any[] = []
+  now = Date.now()
+  all = 0
+date: any;
+
+  accounts =  this.sharedService.accounts;
+
 
   ouvrirNouveauCompte() {
-    // Utilisez le service Router pour naviguer vers la page NewAccount
+    //console.log(this.accounts)
     this.router.navigate(['/new-account']);
   }
   ouvrirDetail() {

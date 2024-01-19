@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
+import { SharedService } from 'app/shared.service';
 
 @Component({
   selector: 'auth-page',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class AuthPageComponent {
 
 
-  constructor(private apiService : ApiService, private router: Router){}
+  constructor(private apiService : ApiService, private router: Router,private sharedService : SharedService){}
 
   loginInfos: any = {
     user_name:  '',
@@ -49,13 +50,13 @@ export class AuthPageComponent {
 
     if (this.action == 'login') {
       this.apiService.login(this.loginInfos.user_name,this.loginInfos.user_password);
-      
+      this.apiService.getAccounts()
     }else if(this.action == 'register'){
       this.apiService.register(this.loginInfos.user_name,this.loginInfos.user_password);
-      
+      this.apiService.getAccounts()
     }
 
-
+    this.router.navigate(['/accueil'])
     
   }
 }

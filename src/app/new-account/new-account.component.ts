@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Account } from 'app/classes/account';
 import { SharedService } from 'app/shared.service';
 
 @Component({
@@ -7,21 +8,21 @@ import { SharedService } from 'app/shared.service';
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css']
 })
-export class NewAccountComponent implements OnInit {
-  newAccount = {
-    label : '',
-    amount : 0
-  }
+
+export class NewAccountComponent  {
+  account  : Account = {label : '', amount : 0};
+
   constructor(private sharedService: SharedService) { }
 
-  ngOnInit(): void {
-    console.log('NewAccountComponent initialisé.');
-  }
+  
 
   enregistrerInformations() {
     console.log('Enregistrement des informations...');
-    console.log(this.newAccount)
-    this.sharedService.addAccount(this.newAccount);
+
+    console.log(this.account);
+    console.log(JSON.parse(localStorage.getItem('user') || '{}') )
+    this.sharedService.addAccount(this.account);
+
     console.log('Informations enregistrées.');
 
   }

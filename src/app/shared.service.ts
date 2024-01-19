@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Account } from './classes/account';
+import { ApiService } from './services/api.service';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -20,9 +21,19 @@ export class SharedService {
     this.transacs.push(transac)
   }
 
+  constructor(private apiService : ApiService){}
+
   addAccount(account : Account) {
     this.accounts.push(account);
+
+    this.apiService.createAccount(account.amount,account.label);
+  }
+
+  allUserAccounts(){
+    return this.accounts =  [...this.apiService.sendAccounts()]
     this.router.navigate(["/detail"])
   }
+  
+
 
 }

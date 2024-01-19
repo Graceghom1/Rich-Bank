@@ -23,25 +23,22 @@
       <a routerLink="/" class="text-2xl" href="/" (click)="retourArriere()"> <- </a>
     </div>
 
-    <div>
-      <form (submit)="enregistrerInformations()" novalidate class="flex flex-col space-y-4">
-        <fieldset>
-          <label class="text-gray-700" for="accountLabel">Label</label>
-          <div class="border p-2 rounded">
-            <input [(ngModel)]="newAccount.label" placeholder="Checking account" name="accountLabel"
-              class="form-input mt-1 block w-full rounded" />
-          </div>
-        </fieldset>
-        <label>
-          <label for="amount" class="text-gray-700">Initial balance</label>
-          <div class="border p-2 rounded">
-            <input [(ngModel)]="newAccount.amount" placeholder="200" type="number" name="amount"
-              class="form-input mt-1 block w-full rounded" />
-          </div>
-        </label>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-300 p-2 rounded text-white">
-          Open
-        </button>
+  <div>
+      <form (submit)="enregistrerInformations()" novalidate class="flex flex-col space-y-4" >
+          <label >
+              <span class="text-gray-700">Label</span>
+              <div class="border p-2 rounded">
+              <input [(ngModel)]="account.label" name="label" placeholder="Checking account"  class="form-input mt-1 block w-full rounded" />
+            </div>
+          </label>
+          <label>
+              <span class="text-gray-700">Initial balance</span>
+              <div class="border p-2 rounded">
+              <input placeholder="200" [(ngModel)]="account.amount" name="amount" type="number"  class="form-input mt-1 block w-full rounded" />
+            </div>
+          </label>
+          <button routerLink="/new-account"  type="submit" class="bg-blue-500 hover:bg-blue-500  p-2 rounded text-white" >Open</button>
+
       </form>
     </div>
   </div>
