@@ -11,6 +11,7 @@ export class TransactionComponent implements OnInit {
   now = Date.now()
   all = 0
 date: any;
+account: any;
 
   constructor(private shareService: SharedService) {}
 

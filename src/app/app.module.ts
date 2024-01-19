@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SendmoneyPageComponent } from './sendmoney-page/sendmoney-page.component';
 import { DetaitCompteComponent } from './detait-compte/detait-compte.component';
 import { CompteComponent } from './compte/compte.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { CompteComponent } from './compte/compte.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

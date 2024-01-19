@@ -11,6 +11,7 @@
           <a routerlink="profile" href="/profile">
             <div class="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-600 rounded-full">
               <span class="font-medium text-white">s</span>
+
             </div>
           </a>
         </div>
@@ -32,7 +33,7 @@
       <li class="space-y-4 bg-white p-4" *ngFor="let t of transacs">
         <div class="flex justify-between">
           <h2 class="text-lg font-bold">{{t.date | date}}</h2>
-          <div>{{all}}&nbsp;£</div>
+          <div>{{t.amount}}&nbsp;£</div>
         </div>
         <ul class="space-y-4">
           <li>
@@ -44,9 +45,10 @@
                       <div class="inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-600 rounded-full">
                         <span class="font-medium text-white">{{t.name[0] | uppercase}}</span>
                       </div>
+
                     <div>
                       <div>{{t.name | uppercase}}</div>
-                      <div>{{t.date | date}}</div>
+                      <div>{{now | date }}</div>
                     </div>
                   </div>
                   <div>{{t.amount}}&nbsp;£</div>

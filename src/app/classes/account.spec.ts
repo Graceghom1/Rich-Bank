@@ -5,3 +5,4 @@ describe('Account', () => {
     expect(new Account()).toBeTruthy();
   });
 });
+
