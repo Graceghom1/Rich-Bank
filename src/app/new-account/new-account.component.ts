@@ -8,7 +8,10 @@ import { SharedService } from 'app/shared.service';
   styleUrls: ['./new-account.component.css']
 })
 export class NewAccountComponent implements OnInit {
-  selectedLabel: string ="";
+  newAccount = {
+    label : '',
+    amount : 0
+  }
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
@@ -17,7 +20,8 @@ export class NewAccountComponent implements OnInit {
 
   enregistrerInformations() {
     console.log('Enregistrement des informations...');
-    this.sharedService.updateSelectedLabel(this.selectedLabel);
+    console.log(this.newAccount)
+    this.sharedService.addAccount(this.newAccount);
     console.log('Informations enregistrées.');
 
   }
