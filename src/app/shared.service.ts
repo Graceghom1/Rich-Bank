@@ -22,7 +22,7 @@ export class SharedService {
 
   addAccount(account : Account) {
     this.accounts.push(account);
-    this.router.navigate(["/detail"])
+    this.router.navigate(["/detait-compte"])
   }
 
 }
