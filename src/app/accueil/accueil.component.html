@@ -22,9 +22,8 @@
     <div align="center">
       <label for="pet-select"></label>
 
-      <select class="border rounded p-1" name="pets" id="pet-select" >
-        <option value="">Checking account</option>
-        <option value="new-account">New </option>
+      <select class="border rounded p-1" name="pets"  id="pet-select" >
+        <option *ngFor=" let account of this.accounts" value="">{{account.label}}</option>
       </select>
       <div>
         <h1>2500,00£</h1>

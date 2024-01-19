@@ -16,6 +16,8 @@ export class NewAccountComponent  {
 
   enregistrerInformations() {
     console.log('Enregistrement des informations...');
+    console.log(this.account);
+    console.log(JSON.parse(localStorage.getItem('user') || '{}') )
     this.sharedService.addAccount(this.account);
     console.log('Informations enregistrées.');
 

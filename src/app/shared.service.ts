@@ -17,5 +17,11 @@ export class SharedService {
     this.apiService.createAccount(account.amount,account.label);
   }
 
+  allUserAccounts(){
+    //this.apiService.getAccounts();
+    return this.accounts =  [...this.apiService.sendAccounts()]
+  }
+  
+
 
 }

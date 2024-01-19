@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Account } from 'app/classes/account';
+import { SharedService } from 'app/shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,13 @@ export class ApiService {
     token : ''
   }
 
+  accounts : Account[] = [];
+
   httpOptions = {
     headers : new HttpHeaders(
       { 
         'Content-Type': 'application/json',
-        Authorization: 'Bearer '+this.user.token 
+        Authorization: 'Bearer '+ JSON.parse(localStorage.getItem('user')|| '{}').token
   })
   };
 
@@ -37,11 +40,31 @@ export class ApiService {
   }
 
   createAccount(amount : number, name : string){
-    //console.log(this.httpOptions)
+    return this.http.post<Account>(this.baseUrl+"accounts",{initialBalance:amount, label:name},this.httpOptions).subscribe(data=> console.log(data))
+  }
+
+  getAccounts(){
+    return this.http.get<Account[]>(this.baseUrl+"accounts",this.httpOptions).subscribe(data=> localStorage.setItem('accounts',JSON.stringify(data)))
+  }
+
+  emitTransaction(emitter : string, receiver : string,amount:number,description:string){
+    return this.http.post<Account>(this.baseUrl+"accounts",{emitterAccountId:emitter, receiverAccountId:receiver,amount:amount,description:description},this.httpOptions).subscribe(data=> console.log(data))
+  }
+
+  getTransaction(id : string){
     const params = new HttpParams()
-      .set('initialBalance', amount)
-      .set('label', name);
-    return this.http.post<Account>(this.baseUrl+"accounts",{ params }).subscribe(data=> console.log(data))
+    .set('transactionId',id);
+    return this.http.get<Account[]>(this.baseUrl+`transactions/${id}`,this.httpOptions).subscribe(data=> localStorage.setItem('accounts',JSON.stringify(data)))
+  }
+
+  sendAccounts(){
+    if (this.accounts == null || this.accounts.length<1) {
+      this.getAccounts();
+      return this.accounts;
+    }else{
+      return this.accounts
+    }
+    
   }
 
   setUserInfos(name : string,clientCode: string,tkn: string){
@@ -49,7 +72,11 @@ export class ApiService {
     this.user.clientCode = clientCode;
     this.user.token = tkn;
 
+    //console.log(tkn)
+
     localStorage.setItem('user',JSON.stringify(this.user) );
-    this.router.navigateByUrl('accueil')
+
+    
+    
   }
 }
