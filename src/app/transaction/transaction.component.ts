@@ -9,4 +9,55 @@ export class TransactionComponent {
   retourArriere() {
     window.history.back();
   }
+
+  annulerTransaction() {
+    // Il faut que j'ajoute ici la logique pour annuler la transaction en attente
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

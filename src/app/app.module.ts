@@ -8,6 +8,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AccountDetailsComponent } from './account-details/account-details.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     TransactionComponent,
     NewAccountComponent,
     AccueilComponent,
+    AccountDetailsComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

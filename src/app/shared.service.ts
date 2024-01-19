@@ -6,7 +6,8 @@ import { Account } from './classes/account';
   providedIn: 'root'
 })
 export class SharedService {
-
+  selectedLabel$ : any;
+  
   accounts : Account[] = [];
 
   addAccount(account : Account) {
