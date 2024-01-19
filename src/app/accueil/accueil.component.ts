@@ -14,9 +14,7 @@ export class AccueilComponent implements OnInit {
   constructor(private router: Router, private sharedService: SharedService) { }
 
   ngOnInit(): void {
-    this.sharedService.selectedLabel$.subscribe(label => {
-      this.selectedLabel = label;
-    });
+    
   }
 
   ouvrirNouveauCompte() {

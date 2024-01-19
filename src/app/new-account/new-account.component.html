@@ -28,16 +28,16 @@
           <label >
               <span class="text-gray-700">Label</span>
               <div class="border p-2 rounded">
-              <input [(ngModel)]="selectedLabel" placeholder="Checking account"  class="form-input mt-1 block w-full rounded" />
+              <input [(ngModel)]="account.label" name="label" placeholder="Checking account"  class="form-input mt-1 block w-full rounded" />
             </div>
           </label>
           <label>
               <span class="text-gray-700">Initial balance</span>
               <div class="border p-2 rounded">
-              <input placeholder="200" type="number"  class="form-input mt-1 block w-full rounded" />
+              <input placeholder="200" [(ngModel)]="account.amount" name="amount" type="number"  class="form-input mt-1 block w-full rounded" />
             </div>
           </label>
-          <button routerLink="/new-account"  type="submit" class="bg-blue-500 hover:bg-blue-300 disabled:opacity-25 p-2 rounded text-white" disabled>Open</button>
+          <button routerLink="/new-account"  type="submit" class="bg-blue-500 hover:bg-blue-500  p-2 rounded text-white" >Open</button>
       </form>
   </div>
 </div>
